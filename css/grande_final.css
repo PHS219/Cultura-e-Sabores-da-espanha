@@ -1,0 +1,323 @@
+/* ==========================
+   PÁGINA ENTREVISTA
+========================== */
+.corpo-entrevista {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.42)),
+    url("../Galeria/Cultura/fundo-cultura-espanha.jpg") center/cover fixed no-repeat;
+  min-height: 100vh;
+}
+
+.pagina-entrevista {
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* ==========================
+   CABEÇALHO INTERNO
+========================== */
+.cabecalho-interno-entrevista {
+  padding: 20px 0 14px;
+}
+
+.caixa-cabecalho-entrevista {
+  background: rgba(255, 255, 255, 0.58);
+  border: 2px solid rgba(217, 210, 199, 0.70);
+  border-radius: 22px;
+  padding: 24px 26px;
+  box-shadow: var(--sombra-forte);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.titulo-pagina-entrevista {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 12px 0 10px;
+}
+
+.subtitulo-pagina-entrevista {
+  font-size: 1rem;
+  color: #2f2f2f;
+  margin: 0;
+}
+
+.faixa-secao {
+  display: inline-flex;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #EB1700;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.texto-preto {
+  color: #000000;
+}
+
+.texto-vermelho {
+  color: #EB1700;
+}
+
+.texto-amarelo {
+  color: #E5B62B;
+}
+
+/* ==========================
+   APRESENTAÇÃO COM FOTO AO LADO
+========================== */
+.secao-apresentacao-entrevista {
+  padding: 8px 0 16px;
+}
+
+.estrutura-apresentacao-entrevista {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.bloco-foto-entrevistada {
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px solid rgba(217, 210, 199, 0.68);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloco-foto-entrevistada img {
+  width: 100%;
+  height: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.caixa-introducao-entrevista {
+  background: rgba(255, 255, 255, 0.54);
+  border: 2px solid rgba(217, 210, 199, 0.68);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.caixa-introducao-entrevista h3 {
+  margin: 0 0 10px;
+  color: var(--vermelho);
+  text-transform: uppercase;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+.caixa-introducao-entrevista p {
+  margin: 0;
+  color: #2b2b2b;
+  line-height: 1.7;
+}
+
+
+/* ==========================
+   ESTRUTURA PRINCIPAL
+========================== */
+.secao-conteudo-entrevista {
+  padding: 6px 0 18px;
+}
+
+.estrutura-conteudo-entrevista {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ==========================
+   BLOCO DAS PERGUNTAS
+========================== */
+.caixa-perguntas-entrevista {
+  background: rgba(255, 255, 255, 0.54);
+  border: 2px solid rgba(217, 210, 199, 0.68);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.caixa-perguntas-entrevista h3 {
+  margin: 0 0 14px;
+  color: var(--vermelho);
+  text-transform: uppercase;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+.lista-perguntas-entrevista {
+  margin: 0;
+  padding-left: 22px;
+  color: #2b2b2b;
+  line-height: 1.7;
+}
+
+.lista-perguntas-entrevista li + li {
+  margin-top: 12px;
+}
+
+.caixa-destaque-entrevista {
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(200, 29, 37, 0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  line-height: 1.5;
+}
+
+.caixa-destaque-entrevista strong {
+  color: var(--vermelho);
+  margin-right: 6px;
+}
+
+/* ==========================
+   BLOCO DO VÍDEO
+========================== */
+.caixa-video-entrevista {
+  background: rgba(255, 255, 255, 0.54);
+  border: 2px solid rgba(217, 210, 199, 0.68);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.topo-video-entrevista {
+  margin-bottom: 16px;
+}
+
+.topo-video-entrevista h3 {
+  margin: 12px 0 8px;
+  color: var(--vermelho);
+  text-transform: uppercase;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+.topo-video-entrevista p {
+  margin: 0;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+.moldura-video-entrevista {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid rgba(200, 29, 37, 0.12);
+  box-shadow: var(--sombra);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.moldura-video-entrevista iframe,
+.moldura-video-entrevista video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ==========================
+   ENCERRAMENTO
+========================== */
+.secao-encerramento-entrevista {
+  padding: 0 0 30px;
+}
+
+.caixa-encerramento-entrevista {
+  background: rgba(255, 255, 255, 0.56);
+  border: 2px solid rgba(217, 210, 199, 0.68);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.caixa-encerramento-entrevista h3 {
+  margin: 0 0 10px;
+  color: var(--vermelho);
+  text-transform: uppercase;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+.caixa-encerramento-entrevista p {
+  margin: 0 0 18px;
+  color: #2b2b2b;
+  line-height: 1.7;
+}
+
+.botao-voltar-mural {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #EB1700, #004686);
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.botao-voltar-mural:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 980px) {
+  .estrutura-apresentacao-entrevista,
+  .estrutura-conteudo-entrevista {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo-pagina-entrevista {
+    font-size: 1.7rem;
+  }
+
+  .bloco-foto-entrevistada img {
+    height: 280px;
+  }
+
+  .caixa-cabecalho-entrevista,
+  .caixa-introducao-entrevista,
+  .caixa-perguntas-entrevista,
+  .caixa-video-entrevista,
+  .caixa-encerramento-entrevista {
+    padding: 18px;
+  }
+
+  .subtitulo-pagina-entrevista,
+  .topo-video-entrevista p,
+  .caixa-introducao-entrevista p,
+  .caixa-encerramento-entrevista p {
+    font-size: 0.95rem;
+  }
+}

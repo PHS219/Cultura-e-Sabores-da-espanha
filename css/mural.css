@@ -1,0 +1,454 @@
+/* ==========================
+   CORPO DO MURAL COM FUNDO
+========================== */
+.corpo-mural {
+  background:
+    linear-gradient(rgba(244, 240, 232, 0.40), rgba(244, 240, 232, 0.40)),
+    url("../Galeria/Mural/TelaFundo.png") center/cover no-repeat fixed;
+}
+
+/* ==========================
+   ÁREA PRINCIPAL DO CARTAZ
+========================== */
+.pagina-mural-estilo-cartaz {
+  width: min(96%, 1500px);
+  margin: 24px auto;
+  background: rgba(255, 255, 255, 0.58);
+  border: 4px solid rgba(217, 210, 199, 0.78);
+  box-shadow: var(--sombra-forte);
+  padding: 28px;
+  border-radius: 18px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+/* ==========================
+   TÍTULO DO CARTAZ
+========================== */
+.cabecalho-cartaz {
+  display: grid;
+  grid-template-columns: 180px 1fr 180px;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.faixa-pincelada {
+  height: 90px;
+  border-radius: 12px;
+  opacity: 0.95;
+}
+
+.faixa-esquerda {
+  background: linear-gradient(90deg, rgba(200, 29, 37, 0.95), rgba(239, 194, 52, 0.95));
+  transform: skewX(-10deg);
+}
+
+.faixa-direita {
+  background: linear-gradient(90deg, rgba(239, 194, 52, 0.95), rgba(200, 29, 37, 0.95));
+  transform: skewX(10deg);
+}
+
+.bloco-titulo-cartaz {
+  text-align: center;
+}
+
+.titulo-cartaz {
+  display: flex;
+  flex-direction: column;
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 4rem;
+  line-height: 0.95;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.texto-preto {
+  color: var(--preto);
+}
+
+.texto-vermelho {
+  color: var(--vermelho);
+}
+
+.texto-amarelo {
+  color: var(--amarelo);
+}
+
+.subtitulo-cartaz {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  color: #333333;
+  border-top: 2px solid #d3b24d;
+  display: inline-block;
+  padding-top: 8px;
+}
+
+/* ==========================
+   ESTRUTURA EM 3 COLUNAS
+========================== */
+.estrutura-cartaz {
+  display: grid;
+  grid-template-columns: 0.95fr 1.35fr 0.95fr;
+  gap: 22px;
+  align-items: start;
+}
+
+/* ==========================
+   COLUNA ESQUERDA
+========================== */
+.coluna-lateral-cartaz {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.caixa-jogadores-selecao {
+  background: linear-gradient(180deg, rgba(248, 215, 216, 0.92), rgba(255, 244, 244, 0.92));
+  border-left: 12px solid var(--vermelho);
+  padding: 14px;
+  box-shadow: var(--sombra);
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.caixa-jogadores-selecao::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(200, 29, 37, 0.14), rgba(239, 194, 52, 0.06));
+  pointer-events: none;
+}
+
+.titulo-jogadores {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  color: var(--vermelho-escuro);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  text-align: center;
+  border-bottom: 2px solid rgba(200, 29, 37, 0.25);
+  padding-bottom: 8px;
+}
+
+.lista-cards-jogadores {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.card-jogador {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 12px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(200, 29, 37, 0.18);
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-jogador img {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--amarelo);
+  background: #fff8dc;
+}
+
+.informacoes-jogador h4 {
+  font-size: 1.05rem;
+  color: var(--preto);
+  margin-bottom: 4px;
+}
+
+.informacoes-jogador p {
+  font-size: 0.92rem;
+  color: #333333;
+  line-height: 1.4;
+}
+
+.caixa-frase-manual {
+  padding: 14px 10px;
+  border-top: 3px solid var(--amarelo);
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 14px;
+}
+
+.frase-espanhol {
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--vermelho-escuro);
+  line-height: 1.1;
+}
+
+.frase-traducao {
+  margin-top: 8px;
+  font-size: 1.15rem;
+  color: #222;
+}
+
+/* ==========================
+   COLUNA CENTRAL
+========================== */
+.coluna-principal-cartaz {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bloco-conteudo-cartaz {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 14px;
+  align-items: start;
+  border-top: 2px solid rgba(216, 209, 199, 0.9);
+  padding-top: 14px;
+}
+
+.icone-circular {
+  width: 72px;
+  height: 72px;
+  background: var(--vermelho);
+  color: var(--branco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-top: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.icone-circular.amarelo {
+  background: var(--amarelo);
+  color: var(--preto);
+}
+
+.texto-bloco-cartaz h3 {
+  font-size: 1.9rem;
+  color: var(--vermelho);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.texto-bloco-cartaz p {
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: #222;
+}
+
+.caixa-ciclo-futebol {
+  margin-top: 12px;
+  border: 2px solid var(--vermelho);
+  padding: 16px;
+  background: rgba(255, 250, 241, 0.95);
+  border-radius: 14px;
+}
+
+.caixa-ciclo-futebol h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--preto);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.sequencia-ciclo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+}
+
+/* ==========================
+   COLUNA DIREITA
+========================== */
+.coluna-direita-cartaz {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.caixa-destaque-bilbao,
+.caixa-curiosidades,
+.caixa-mapa-espanha {
+  border: 2px solid var(--vermelho);
+  padding: 16px;
+  background: rgba(255, 253, 249, 0.94);
+  border-radius: 14px;
+  box-shadow: var(--sombra);
+}
+
+.caixa-destaque-bilbao h3,
+.caixa-curiosidades h3 {
+  font-size: 1.5rem;
+  color: var(--vermelho);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.bloco-bilbao-conteudo {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.bloco-bilbao-conteudo img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.bloco-bilbao-conteudo p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.lista-bilbao,
+.caixa-curiosidades ul {
+  padding-left: 20px;
+}
+
+.lista-bilbao li,
+.caixa-curiosidades ul li {
+  margin-bottom: 8px;
+  font-size: 0.98rem;
+}
+
+.caixa-mapa-espanha {
+  text-align: center;
+}
+
+.caixa-mapa-espanha img {
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto 10px;
+}
+
+.legenda-mapa {
+  font-size: 1.8rem;
+  color: var(--vermelho-escuro);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ==========================
+   FAIXA FINAL DO MURAL
+========================== */
+.faixa-final-cartaz {
+  margin-top: 22px;
+  background: linear-gradient(90deg, rgba(200, 29, 37, 0.78), rgba(17, 17, 17, 0.58));
+  color: var(--branco);
+  text-align: center;
+  padding: 16px 20px;
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.faixa-final-cartaz span {
+  color: var(--amarelo);
+}
+
+/* ==========================
+   IMPRESSÃO
+========================== */
+@page {
+  size: A4 landscape;
+  margin: 10mm;
+}
+
+@media print {
+  .cabecalho-site {
+    display: none;
+  }
+
+  .corpo-mural {
+    background: #ffffff;
+  }
+
+  .pagina-mural-estilo-cartaz {
+    margin: 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background: #ffffff;
+  }
+
+  .faixa-final-cartaz {
+    background: #111111;
+    color: #ffffff;
+  }
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 1200px) {
+  .titulo-cartaz {
+    font-size: 3.1rem;
+  }
+
+  .estrutura-cartaz {
+    grid-template-columns: 1fr;
+  }
+
+  .cabecalho-cartaz {
+    grid-template-columns: 1fr;
+  }
+
+  .faixa-pincelada {
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo-cartaz {
+    font-size: 2.3rem;
+  }
+
+  .subtitulo-cartaz {
+    font-size: 1.05rem;
+  }
+
+  .texto-bloco-cartaz h3,
+  .caixa-destaque-bilbao h3,
+  .caixa-curiosidades h3,
+  .caixa-ciclo-futebol h3,
+  .titulo-jogadores {
+    font-size: 1.3rem;
+  }
+
+  .frase-espanhol {
+    font-size: 1.6rem;
+  }
+
+  .faixa-final-cartaz {
+    font-size: 1.1rem;
+  }
+
+  .bloco-bilbao-conteudo,
+  .card-jogador {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .card-jogador img {
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,694 @@
+/* ==========================
+   PÁGINA CULTURA E SABORES
+========================== */
+.corpo-cultura-sabores {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.42)),
+    url("../Galeria/Cultura/fundo-cultura-espanha.jpg") center/cover fixed no-repeat;
+}
+
+
+
+.pagina-cultura-sabores {
+  width: 100%;
+}
+
+/* ==========================
+   CABEÇALHO INTERNO DA PÁGINA
+========================== */
+.cabecalho-interno-pagina {
+  padding: 22px 0 18px;
+}
+
+.caixa-cabecalho-interno {
+  background: rgba(244, 241, 241, 0.72);
+  border: 2px solid rgba(217, 210, 199, 0.75);
+  border-radius: 22px;
+  padding: 22px 26px;
+  box-shadow: var(--sombra-forte);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom: 4px solid rgba(235, 23, 0, 0.18);
+}
+
+.bloco-cabecalho-interno {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.titulo-pagina-interno {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.subtitulo-pagina-interno {
+  font-size: 1rem;
+  color: #2f2f2f;
+  margin: 0;
+}
+
+.linha-informacoes-topo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.caixa-info-topo {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(200, 29, 37, 0.14);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  color: #2b2b2b;
+}
+
+.caixa-info-topo strong {
+  color: var(--vermelho);
+  margin-right: 6px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .titulo-pagina-interno {
+    font-size: 1.7rem;
+  }
+
+  .caixa-cabecalho-interno {
+    padding: 18px;
+  }
+
+  .linha-informacoes-topo {
+    flex-direction: column;
+  }
+}
+
+/* ==========================
+   ESTRUTURA PRINCIPAL
+========================== */
+.secao-painel-lateral {
+  padding: 36px 0 10px;
+}
+
+.estrutura-painel-lateral {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ==========================
+   MENU LATERAL PRINCIPAL
+========================== */
+.menu-lateral-cultura {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+}
+
+.caixa-menu-lateral {
+  background: rgba(255, 255, 255, 0.58);
+  border: 3px solid rgba(217, 210, 199, 0.82);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: var(--sombra-forte);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.titulo-menu-lateral {
+  color: var(--vermelho);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+.titulo-menu-lateral.espaco-topo {
+  margin-top: 22px;
+}
+
+.botao-menu-lateral,
+.botao-menu-artistas {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.78);
+  border: 2px solid rgba(200, 29, 37, 0.10);
+  border-radius: 14px;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: bold;
+  color: var(--preto);
+  cursor: pointer;
+  transition: 0.22s ease;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.botao-menu-lateral:hover,
+.botao-menu-artistas:hover {
+  transform: translateX(3px);
+  color: var(--vermelho);
+  border-color: rgba(200, 29, 37, 0.25);
+}
+
+.botao-menu-lateral.ativo,
+.botao-menu-artistas.ativo {
+  background: linear-gradient(90deg, rgba(200, 29, 37, 0.92), rgba(239, 194, 52, 0.92));
+  color: var(--branco);
+  border-color: transparent;
+}
+
+.icone-menu {
+  width: 22px;
+  display: inline-flex;
+  justify-content: center;
+  flex: 0 0 22px;
+  font-size: 1rem;
+}
+
+/* ==========================
+   ÁREA DE CONTEÚDO
+========================== */
+.area-conteudo-lateral {
+  background: rgba(255, 255, 255, 0.52);
+  border: 3px solid rgba(217, 210, 199, 0.82);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: var(--sombra-forte);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  min-height: 760px;
+}
+
+.painel-conteudo,
+.painel-artistas-interno {
+  display: none;
+  animation: aparecerPainel 0.25s ease;
+}
+
+.painel-conteudo.ativo,
+.painel-artistas-interno.ativo {
+  display: block;
+}
+
+@keyframes aparecerPainel {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cabecalho-painel-conteudo {
+  margin-bottom: 20px;
+}
+
+.cabecalho-painel-conteudo h3 {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 2rem;
+  color: var(--vermelho);
+  margin: 12px 0 10px;
+  text-transform: uppercase;
+}
+
+.cabecalho-painel-conteudo p {
+  color: #303030;
+  line-height: 1.65;
+}
+
+/* ==========================
+   IMAGEM DE DESTAQUE NO TOPO
+========================== */
+.bloco-imagem-destaque-painel {
+  margin-bottom: 20px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  border: 2px solid rgba(200, 29, 37, 0.14);
+}
+
+.bloco-imagem-destaque-painel img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================
+   CARDS INFORMATIVOS
+========================== */
+.grade-cartoes-informativos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.cartao-informativo {
+  background: rgba(255, 255, 255, 0.86);
+  border: 2px solid rgba(200, 29, 37, 0.12);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--sombra);
+}
+
+.cartao-informativo h4 {
+  color: var(--vermelho-escuro);
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.cartao-informativo p {
+  line-height: 1.6;
+  color: #2b2b2b;
+}
+
+/* ==========================
+   CARDS COM FOTO
+========================== */
+.grade-cartoes-com-foto {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.cartao-com-foto {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  border: 2px solid rgba(200, 29, 37, 0.14);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+.cartao-com-foto:hover {
+  transform: translateY(-4px);
+}
+
+.cartao-com-foto img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.cartao-com-foto:hover img {
+  transform: scale(1.03);
+}
+
+.cartao-com-foto h4 {
+  color: var(--vermelho);
+  font-size: 1.05rem;
+  margin: 14px 14px 8px;
+  text-transform: uppercase;
+}
+
+.cartao-com-foto p {
+  margin: 0 14px 16px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #2b2b2b;
+}
+
+/* ==========================
+   CARDS DE IMAGEM ANTIGOS
+   (mantidos para compatibilidade)
+========================== */
+.grade-cartoes-imagem {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.cartao-imagem {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  border: 2px solid rgba(200, 29, 37, 0.14);
+}
+
+.cartao-imagem img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.cartao-imagem h4 {
+  color: var(--vermelho);
+  font-size: 1.05rem;
+  margin: 14px 14px 8px;
+  text-transform: uppercase;
+}
+
+.cartao-imagem p {
+  margin: 0 14px 16px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ==========================
+   RECEITAS COM FOTO
+========================== */
+.grade-cartoes-receita {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.cartao-receita-bonito {
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid rgba(200, 29, 37, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.cartao-receita-bonito img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.conteudo-cartao-receita {
+  padding: 18px;
+}
+
+.topo-cartao-receita {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.topo-cartao-receita h4 {
+  color: var(--vermelho);
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+.etiqueta-receita {
+  background: rgba(239, 194, 52, 0.18);
+  color: var(--vermelho-escuro);
+  border: 1px solid rgba(200, 29, 37, 0.12);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  font-weight: bold;
+}
+
+.conteudo-cartao-receita p {
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+/* ==========================
+   SUBMENU INTERNO - GRANDES ARTISTAS
+========================== */
+.estrutura-submenu-interno {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.menu-secundario-artistas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.area-subconteudo-artistas {
+  min-height: 380px;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 1100px) {
+  .conteudo-abertura-cultura,
+  .estrutura-painel-lateral,
+  .estrutura-submenu-interno {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-lateral-cultura {
+    position: static;
+  }
+
+  .grade-cartoes-com-foto,
+  .grade-cartoes-imagem,
+  .grade-cartoes-receita {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grade-cartoes-informativos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grade-cartoes-informativos,
+  .grade-cartoes-com-foto,
+  .grade-cartoes-imagem,
+  .grade-cartoes-receita {
+    grid-template-columns: 1fr;
+  }
+
+  .cabecalho-painel-conteudo h3 {
+    font-size: 1.6rem;
+  }
+
+  .area-conteudo-lateral {
+    min-height: auto;
+  }
+
+  .bloco-imagem-destaque-painel img {
+    height: 220px;
+  }
+
+  .cartao-com-foto img,
+  .cartao-imagem img,
+  .cartao-receita-bonito img {
+    height: 220px;
+  }
+}
+.bloco-imagem-destaque-painel {
+  margin-bottom: 20px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  border: 2px solid rgba(200, 29, 37, 0.14);
+}
+
+.bloco-imagem-destaque-painel img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.mapa-linguas {
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.mapa-linguas img {
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ==========================
+   CORES DOS CARDS DE LÍNGUAS
+========================== */
+/* ==========================
+   GRADE DAS LÍNGUAS
+========================== */
+.grade-cartoes-linguas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* ==========================
+   CARD DE LÍNGUA - MODELO LIMPO
+========================== */
+.cartao-lingua {
+  position: relative;
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  min-height: 110px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid transparent;
+  box-shadow: var(--sombra);
+  transition: transform 0.22s ease;
+}
+
+.cartao-lingua:hover {
+  transform: translateY(-3px);
+}
+
+.cartao-lingua::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  border-radius: 16px 16px 0 0;
+}
+
+.cartao-lingua h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.cartao-lingua p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #2b2b2b;
+}
+
+/* ==========================
+   CORES DAS LÍNGUAS
+========================== */
+
+/* Castelhano / Espanhol */
+.cartao-lingua.castelhano {
+  border-color: #d1e2aa;
+  background: linear-gradient(180deg, rgba(209, 226, 170, 0.28), rgba(255, 255, 255, 0.92));
+}
+.cartao-lingua.castelhano::before {
+  background: #d1e2aa;
+}
+.cartao-lingua.castelhano h4 {
+  color: #6f8c3a;
+}
+
+/* Catalão */
+.cartao-lingua.catalao {
+  border-color: #e4894e;
+  background: linear-gradient(180deg, rgba(228, 137, 78, 0.25), rgba(255, 255, 255, 0.92));
+}
+.cartao-lingua.catalao::before {
+  background: #e4894e;
+}
+.cartao-lingua.catalao h4 {
+  color: #c95c16;
+}
+
+/* Galego */
+.cartao-lingua.galego {
+  border-color: #2174a4;
+  background: linear-gradient(180deg, rgba(33, 116, 164, 0.22), rgba(255, 255, 255, 0.92));
+}
+.cartao-lingua.galego::before {
+  background: #2174a4;
+}
+.cartao-lingua.galego h4 {
+  color: #0d5e8d;
+}
+
+/* Basco / Euskera */
+.cartao-lingua.basco {
+  border-color: #8e8e8e;
+  background: linear-gradient(180deg, rgba(142, 142, 142, 0.22), rgba(255, 255, 255, 0.92));
+}
+.cartao-lingua.basco::before {
+  background: #8e8e8e;
+}
+.cartao-lingua.basco h4 {
+  color: #5f5f5f;
+}
+
+/* Aranês */
+.cartao-lingua.aranes {
+  border-color: #d61d1b;
+  background: linear-gradient(180deg, rgba(214, 29, 27, 0.20), rgba(255, 255, 255, 0.92));
+}
+.cartao-lingua.aranes::before {
+  background: #d61d1b;
+}
+.cartao-lingua.aranes h4 {
+  color: #b51514;
+}
+
+/* Asturiano */
+.cartao-lingua.asturiano {
+  border-color: #91cba8;
+  background: linear-gradient(180deg, rgba(145, 203, 168, 0.26), rgba(255, 255, 255, 0.92));
+}
+.cartao-lingua.asturiano::before {
+  background: #91cba8;
+}
+.cartao-lingua.asturiano h4 {
+  color: #4d8f6a;
+}
+
+/* Aragonês */
+.cartao-lingua.aragones {
+  border-color: #f1e9a8;
+  background: linear-gradient(180deg, rgba(241, 233, 168, 0.30), rgba(255, 255, 255, 0.92));
+}
+.cartao-lingua.aragones::before {
+  background: #f1e9a8;
+}
+.cartao-lingua.aragones h4 {
+  color: #9b8b25;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 1100px) {
+  .grade-cartoes-linguas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grade-cartoes-linguas {
+    grid-template-columns: 1fr;
+  }
+
+  .cartao-lingua {
+    min-height: auto;
+  }
+}
+
+.botao-maps {
+  display: inline-block;
+  margin: 0 14px 16px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #EB1700, #004686);
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.22s ease;
+}
+
+.botao-maps:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}

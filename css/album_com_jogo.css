@@ -1,0 +1,422 @@
+/* ==========================
+   JOGO DA MEMÓRIA - ESPANHA
+========================== */
+.corpo-jogo-memoria {
+  background:
+    linear-gradient(rgba(248, 241, 223, 0.78), rgba(248, 241, 223, 0.78)),
+    url("../Galeria/Cultura/fundo-cultura-espanha.jpg") center/cover fixed no-repeat;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.pagina-jogo-memoria {
+  width: min(98vw, 1500px);
+  min-height: calc(100vh - 16px);
+  margin: 8px auto;
+  background: rgba(255, 255, 255, 0.74);
+  border: 3px solid #d9d2c7;
+  border-radius: 22px;
+  box-shadow: var(--sombra-forte);
+  padding: 14px 16px 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================
+   CABEÇALHO DO JOGO
+========================== */
+.cabecalho-jogo-memoria {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.cabecalho-jogo-memoria .faixa-secao {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: #EB1700;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.cabecalho-jogo-memoria h1 {
+  margin: 6px 0 4px;
+  color: var(--vermelho);
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  line-height: 1.05;
+}
+
+.cabecalho-jogo-memoria p {
+  margin: 0;
+  color: #2f2f2f;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+/* ==========================
+   PAINEL PRINCIPAL
+========================== */
+.painel-jogo-memoria {
+  background: rgba(255,255,255,0.70);
+  border: 2px solid rgba(200,29,37,0.12);
+  border-radius: 20px;
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================
+   STATUS + BOTÕES
+========================== */
+.painel-status-jogo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.caixa-status-jogo {
+  min-width: 82px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(200,29,37,0.10);
+  border-radius: 12px;
+  padding: 7px 9px;
+  text-align: center;
+}
+
+.rotulo-status {
+  display: block;
+  font-size: 0.68rem;
+  color: #444;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.caixa-status-jogo strong {
+  color: var(--vermelho);
+  font-size: 0.95rem;
+}
+
+.botao-reiniciar-jogo,
+.botao-voltar-mural {
+  border: none;
+  background: linear-gradient(90deg, #EB1700, #004686);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 9px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.86rem;
+  line-height: 1;
+  min-height: 36px;
+}
+
+.botao-reiniciar-jogo:hover,
+.botao-voltar-mural:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+/* ==========================
+   GRADE DO JOGO
+========================== */
+.grade-jogo-memoria {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(88px, 1fr));
+  gap: 10px;
+  width: 100%;
+  align-items: stretch;
+  justify-items: stretch;
+  flex: 1;
+}
+
+/* ==========================
+   CARTAS
+========================== */
+.cartao-memoria {
+  position: relative;
+  width: 100%;
+  min-height: 110px;
+  aspect-ratio: 3 / 4;
+  perspective: 1000px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+}
+
+.cartao-memoria-inner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease;
+}
+
+.cartao-memoria.virado .cartao-memoria-inner,
+.cartao-memoria.encontrado .cartao-memoria-inner {
+  transform: rotateY(180deg);
+}
+
+.face-memoria {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(200, 29, 37, 0.12);
+  box-shadow: var(--sombra);
+}
+
+/* Frente da carta com bandeira */
+.frente-memoria {
+  background:
+    linear-gradient(rgba(255,255,255,0.04), rgba(255,255,255,0.04)),
+    url("../Galeria/Mural/bandeira-espanha-seeklogo.png") center/cover no-repeat;
+}
+
+/* Garantir que não apareça texto */
+.frente-memoria::after {
+  content: "";
+}
+
+/* Verso da carta */
+.verso-memoria {
+  transform: rotateY(180deg);
+  background: #ffffff;
+}
+
+.verso-memoria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cartao-memoria.encontrado {
+  opacity: 0.94;
+}
+
+/* ==========================
+   MODAL DE VITÓRIA
+========================== */
+.modal-vitoria {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-vitoria.oculto {
+  display: none;
+}
+
+.conteudo-modal-vitoria {
+  width: min(92%, 520px);
+  background: rgba(255,255,255,0.96);
+  border-radius: 22px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: var(--sombra-forte);
+  border: 3px solid rgba(200,29,37,0.12);
+}
+
+.conteudo-modal-vitoria h2 {
+  margin: 10px 0 8px;
+  color: var(--vermelho);
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+.conteudo-modal-vitoria p {
+  margin: 0;
+  color: #2f2f2f;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.acoes-modal-vitoria {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================
+   ESTRELAS DE DESEMPENHO
+========================== */
+.estrelas-desempenho {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.estrela {
+  opacity: 0.25;
+  transform: scale(0.95);
+  transition: 0.25s ease;
+}
+
+.estrela.ativa {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.estrela.ouro {
+  color: #E5B62B;
+  text-shadow: 0 3px 10px rgba(229, 182, 43, 0.28);
+}
+
+/* ==========================
+   NOTEBOOK / TELA MÉDIA
+========================== */
+@media (max-width: 1200px) {
+  .grade-jogo-memoria {
+    grid-template-columns: repeat(4, minmax(90px, 1fr));
+  }
+
+  .cartao-memoria {
+    min-height: 105px;
+  }
+
+  .cabecalho-jogo-memoria h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ==========================
+   TABLET
+========================== */
+@media (max-width: 900px) {
+  .pagina-jogo-memoria {
+    width: min(97vw, 1000px);
+    padding: 12px;
+  }
+
+  .cabecalho-jogo-memoria {
+    margin-bottom: 8px;
+  }
+
+  .cabecalho-jogo-memoria h1 {
+    font-size: 1.4rem;
+  }
+
+  .grade-jogo-memoria {
+    grid-template-columns: repeat(4, minmax(78px, 1fr));
+    gap: 8px;
+  }
+
+  .cartao-memoria {
+    min-height: 95px;
+  }
+}
+
+/* ==========================
+   CELULAR
+========================== */
+@media (max-width: 600px) {
+  .pagina-jogo-memoria {
+    width: min(96vw, 1000px);
+    min-height: auto;
+    margin: 6px auto;
+    padding: 10px;
+  }
+
+  .cabecalho-jogo-memoria {
+    margin-bottom: 6px;
+  }
+
+  .cabecalho-jogo-memoria .faixa-secao {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    margin-bottom: 5px;
+  }
+
+  .cabecalho-jogo-memoria h1 {
+    font-size: 1.12rem;
+    margin: 4px 0;
+  }
+
+  .cabecalho-jogo-memoria p {
+    font-size: 0.8rem;
+  }
+
+  .painel-jogo-memoria {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .painel-status-jogo {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .caixa-status-jogo {
+    min-width: 70px;
+    padding: 6px 7px;
+  }
+
+  .rotulo-status {
+    font-size: 0.62rem;
+  }
+
+  .caixa-status-jogo strong {
+    font-size: 0.84rem;
+  }
+
+  .botao-reiniciar-jogo,
+  .botao-voltar-mural {
+    width: 100%;
+    min-height: 34px;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .grade-jogo-memoria {
+    grid-template-columns: repeat(3, minmax(68px, 1fr));
+    gap: 7px;
+  }
+
+  .cartao-memoria {
+    min-height: 82px;
+  }
+
+  .conteudo-modal-vitoria {
+    padding: 18px 14px;
+  }
+
+  .conteudo-modal-vitoria h2 {
+    font-size: 1.05rem;
+  }
+
+  .estrelas-desempenho {
+    font-size: 1.5rem;
+  }
+}
