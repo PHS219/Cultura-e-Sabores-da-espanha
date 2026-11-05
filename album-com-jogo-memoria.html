@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória - Espanha</title>
+
+  <link rel="stylesheet" href="Css/geral.css">
+  <link rel="stylesheet" href="Css/Album_com_jogo.css">
+
+  <script src="JS/album-memoria.js" defer></script>
+</head>
+<body class="corpo-jogo-memoria">
+
+  <main class="pagina-jogo-memoria">
+    
+    <!-- CABEÇALHO -->
+    <section class="cabecalho-jogo-memoria">
+      <span class="faixa-secao">Jogo interativo</span>
+      <h1>Jogo da Memória da Espanha</h1>
+      <p>Encontre os pares usando as figurinhas do álbum.</p>
+    </section>
+
+    <!-- PAINEL DO JOGO -->
+    <section class="painel-jogo-memoria">
+      
+      <div class="painel-status-jogo">
+        <div class="caixa-status-jogo">
+          <span class="rotulo-status">Movimentos</span>
+          <strong id="contagem-movimentos">0</strong>
+        </div>
+
+        <div class="caixa-status-jogo">
+          <span class="rotulo-status">Pares</span>
+          <strong id="contagem-pares">0/6</strong>
+        </div>
+
+        <div class="caixa-status-jogo">
+          <span class="rotulo-status">Tempo</span>
+          <strong id="contagem-tempo">00:00</strong>
+        </div>
+
+        <button id="botao-reiniciar-jogo" class="botao-reiniciar-jogo" type="button">
+          Embaralhar novamente
+        </button>
+
+        <a href="Index.html" class="botao-voltar-mural">
+          Voltar ao mural
+        </a>
+      </div>
+
+      <div class="grade-jogo-memoria" id="grade-jogo-memoria">
+        <!-- As cartas serão inseridas pelo JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE VITÓRIA -->
+  <div class="modal-vitoria oculto" id="modal-vitoria">
+    <div class="conteudo-modal-vitoria">
+      <span class="faixa-secao">Parabéns</span>
+      <h2>Você completou o jogo!</h2>
+
+      <p id="mensagem-vitoria">
+        Você encontrou todos os pares.
+      </p>
+
+      <div id="estrelas-desempenho" class="estrelas-desempenho" aria-label="Desempenho em estrelas"></div>
+
+      <div class="acoes-modal-vitoria">
+        <button id="botao-jogar-novamente" class="botao-reiniciar-jogo" type="button">
+          Jogar novamente
+        </button>
+
+        <a href="Index.html" class="botao-voltar-mural">
+          Voltar ao mural
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
